@@ -1455,19 +1455,19 @@ local function checkReactor()
 	end
 end
 
-local function onAlarmOff() {
+local function onAlarmOff()
     if alarm == true then
         addLog("logs.cfg",getTime(false),"Alarm turned off [Auto]")
         alarm = false
     end
-}
+end
 
-local function onAlarmOn() {
+local function onAlarmOn()
     if alarm == false then
         addLog("logs.cfg",getTime(false),"Alarm turned on [Auto]")
         alarm = true
     end
-}
+end
 
 while true do
 	parallel.waitForAny(drawAll,clickListener,checkReactor)
