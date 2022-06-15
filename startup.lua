@@ -1448,7 +1448,7 @@ local function checkReactor()
 		redstone.setOutput("right", true)
 
         onAlarmOn()
-    elseif
+    else
         redstone.setOutput("right", false)
 
         onAlarmOff()
