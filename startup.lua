@@ -1449,6 +1449,7 @@ local function checkReactor()
 
         if alarm == false then
             addLog("logs.cfg",getTime(false),"Alarm turned on [Auto]")
+            alarm = true
         end
 
     elseif
@@ -1456,6 +1457,7 @@ local function checkReactor()
 
         if alarm == true then
             addLog("logs.cfg",getTime(false),"Alarm turned off [Auto]")
+            alarm = false
         end
 	end
 end
