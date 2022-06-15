@@ -1447,20 +1447,27 @@ local function checkReactor()
 	if energyTransfer < 20000000 then
 		redstone.setOutput("right", true)
 
-        if alarm == false then
-            addLog("logs.cfg",getTime(false),"Alarm turned on [Auto]")
-            alarm = true
-        end
-
+        onAlarmOn()
     elseif
         redstone.setOutput("right", false)
 
-        if alarm == true then
-            addLog("logs.cfg",getTime(false),"Alarm turned off [Auto]")
-            alarm = false
-        end
+        onAlarmOff()
 	end
 end
+
+local function onAlarmOff() {
+    if alarm == true then
+        addLog("logs.cfg",getTime(false),"Alarm turned off [Auto]")
+        alarm = false
+    end
+}
+
+local function onAlarmOn() {
+    if alarm == false then
+        addLog("logs.cfg",getTime(false),"Alarm turned on [Auto]")
+        alarm = true
+    end
+}
 
 while true do
 	parallel.waitForAny(drawAll,clickListener,checkReactor)
