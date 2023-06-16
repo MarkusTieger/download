@@ -7,4 +7,4 @@ function onChatMessageSended(message)
   end
 end
 
-event.registerListener(chatSendEventClass, 0, java.functionToConsumer(onChatMessageSended))
+event.registerListener(chatSendEventClass, 0, java.lua_functionToConsumer(onChatMessageSended))
